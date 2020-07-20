@@ -1,0 +1,51 @@
+.circule {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  margin: 0 auto;
+  border: 1px solid black;
+  position: relative;
+  background-color: gold;
+}
+
+.cart {
+  width: 120px;
+  height: 120px;
+}
+
+.sandwinch {
+  margin: 20px auto;
+
+}
+
+.order {
+  margin: 47px 0px 0px 3px;
+}
+
+.ensaladas {
+  position: absolute;
+  top: 120px;
+  right: 45px;
+}
+
+.burger {
+  margin: 20px auto;
+}
+
+.wrapper {
+  position: relative;
+}
+
+.postre {
+  margin: 20px auto;
+  position: absolute;
+  top: 100px;
+  left: 50px;
+}
+
+fa-icon {
+  position: absolute;
+  top: 33%;
+  left: 33%;
+  font-size: 29px;
+}
