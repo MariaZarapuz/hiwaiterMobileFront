@@ -19,12 +19,17 @@ export class NavigationComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  sendQuantityandChangeStatus(id) {
+    this.changeStatus(id);
+    this.quantityTickets(id)
+  }
+
   changeStatus(id) {
     this.quantityTicket = prompt('¿Cuantas cuentas necesita la mesa?');
     this.orderService.changeStatus(id);
   }
 
-  quantityTickets() {
-    this.orderService.quantityTickets(this.quantityTicket);
+  quantityTickets(id) {
+    this.orderService.quantityTickets(this.quantityTicket, id);
   }
 }
