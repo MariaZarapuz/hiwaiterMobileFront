@@ -8,7 +8,7 @@ import { HttpClient } from '@angular/common/http';
 export class OrderService {
 
   urlTables = 'http://localhost:3000/api/tables';
-  urlTicket = 'http://localhost:3000/api/ticket';
+  urlTicket = 'http://localhost:3000/api/tickets';
 
 
 

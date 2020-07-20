@@ -11,7 +11,7 @@ import { OrderService } from 'src/app/order.service';
 export class NavigationComponent implements OnInit {
 
   faShoppingCart = faShoppingCart;
-  quantityTicket: string;
+  quantityTicket: number;
 
 
   constructor(private orderService: OrderService) { }
@@ -20,11 +20,14 @@ export class NavigationComponent implements OnInit {
   }
 
   changeStatus(id) {
-    this.quantityTicket = prompt('¿Cuantas cuentas necesita la mesa?');
+    this.quantityTicket = parseInt(prompt('¿Cuantas cuentas necesita la mesa?'));
+    console.log(this.quantityTicket);
+    this.quantityTickets();
     this.orderService.changeStatus(id);
   }
 
   quantityTickets() {
+    console.log(this.quantityTicket);
     this.orderService.quantityTickets(this.quantityTicket);
   }
 }
