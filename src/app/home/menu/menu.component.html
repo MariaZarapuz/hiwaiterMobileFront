@@ -30,10 +30,15 @@
           <p>{{item.description}}</p>
           <div class="row">
             <p class="col-6">Precio: {{item.price}}€</p>
-            <fa-icon [icon]="faShoppingCart" class="col-6 text-right"></fa-icon>
+            <fa-icon [icon]="faShoppingCart" class="col-6 text-right" data-toggle="modal" data-target="#exampleModal">
+            </fa-icon>
           </div>
         </div>
 
       </div>
     </div>
+  </div>
+  <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+    aria-hidden="true">
+    <app-modal-login></app-modal-login>
   </div>

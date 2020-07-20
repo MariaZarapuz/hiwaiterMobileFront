@@ -12,6 +12,7 @@ import { FooterComponent } from './shared/footer/footer.component';
 import { IndexComponent } from './home/index/index.component';
 import { MenuComponent } from './home/menu/menu.component';
 import { NavigationComponent } from './home/index/navigation/navigation.component';
+import { ModalLoginComponent } from './modal-login/modal-login.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { NavigationComponent } from './home/index/navigation/navigation.componen
     FooterComponent,
     IndexComponent,
     MenuComponent,
-    NavigationComponent
+    NavigationComponent,
+    ModalLoginComponent
   ],
   imports: [
     BrowserModule,

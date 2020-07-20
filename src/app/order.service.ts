@@ -8,6 +8,8 @@ import { HttpClient } from '@angular/common/http';
 export class OrderService {
 
   urlTables = 'http://localhost:3000/api/tables';
+  urlTicket = 'http://localhost:3000/api/ticket';
+
 
 
   constructor(private httpClient: HttpClient) { }
@@ -15,5 +17,9 @@ export class OrderService {
   changeStatus(id) {
     return this.httpClient.put(`${this.urlTables}/editState`, { id, status: 'Solicitud de pedido' }).toPromise();
 
+  }
+
+  quantityTickets(quantity) {
+    return this.httpClient.post(`${this.urlTicket}/add`, { quantity }).toPromise();
   }
 }

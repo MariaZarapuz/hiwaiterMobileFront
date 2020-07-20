@@ -23,4 +23,8 @@ export class MenuComponent implements OnInit {
     this.listMenu = await this.menuService.getMenu();
   }
 
+  shopping(order) {
+
+  }
+
 }

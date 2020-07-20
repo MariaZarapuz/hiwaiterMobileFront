@@ -11,13 +11,20 @@ import { OrderService } from 'src/app/order.service';
 export class NavigationComponent implements OnInit {
 
   faShoppingCart = faShoppingCart;
+  quantityTicket: string;
 
 
   constructor(private orderService: OrderService) { }
 
   ngOnInit(): void {
   }
+
   changeStatus(id) {
+    this.quantityTicket = prompt('¿Cuantas cuentas necesita la mesa?');
     this.orderService.changeStatus(id);
+  }
+
+  quantityTickets() {
+    this.orderService.quantityTickets(this.quantityTicket);
   }
 }
