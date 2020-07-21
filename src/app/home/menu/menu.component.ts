@@ -35,6 +35,7 @@ export class MenuComponent implements OnInit {
     this.orderService.postProduct(order);
   }
   sendOrder() {
+    console.log('hola');
     this.orderService.sendOrder();
   }
 }

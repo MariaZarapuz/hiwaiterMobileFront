@@ -49,6 +49,6 @@ export class OrderService {
   }
 
   sendOrder() {
-    this.httpClient.post(`${this.urlOrder}/add`, { order: this.arrayOrder });
+    this.httpClient.post(`${this.urlOrder}/add`, { order: this.arrayOrder }).toPromise();
   }
 }
