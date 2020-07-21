@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-index',
@@ -6,10 +7,13 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./index.component.css']
 })
 export class IndexComponent implements OnInit {
+  id: any;
+  token: any;
 
-  constructor() { }
+  constructor(private activatedRouter: ActivatedRoute) { }
 
-  ngOnInit(): void {
+  ngOnInit() {
+
   }
 
 }

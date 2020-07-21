@@ -1,9 +1,11 @@
 <div class="continer">
   <app-header></app-header>
-  <div class="body">
-    <app-index></app-index>
-    <app-navigation></app-navigation>
-    <app-menu></app-menu>
-  </div>
+  <router-outlet>
+    <div class="body">
+      <app-index></app-index>
+      <app-navigation></app-navigation>
+      <app-menu></app-menu>
+    </div>
+  </router-outlet>
   <app-footer></app-footer>
 </div>

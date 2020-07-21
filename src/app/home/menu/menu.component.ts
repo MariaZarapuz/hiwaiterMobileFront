@@ -11,7 +11,7 @@ import { OrderService } from 'src/app/order.service';
 })
 export class MenuComponent implements OnInit {
 
-  numberTable = 24;
+  numberTable = 25;
   listMenu: any;
   faShoppingCart = faShoppingCart;
   item: any;
@@ -24,7 +24,6 @@ export class MenuComponent implements OnInit {
 
   ngOnInit(): void {
     this.getMenu();
-    console.log(this.listMenu)
   }
 
   async getMenu() {
@@ -35,7 +34,6 @@ export class MenuComponent implements OnInit {
     this.orderService.postProduct(order);
   }
   sendOrder() {
-    console.log('hola');
     this.orderService.sendOrder();
   }
 }
