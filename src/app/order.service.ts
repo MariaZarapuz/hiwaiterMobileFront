@@ -19,7 +19,7 @@ export class OrderService {
 
   }
 
-  quantityTickets(quantity) {
-    return this.httpClient.post(`${this.urlTicket}/add`, { quantity }).toPromise();
+  quantityTickets(quantity, id) {
+    return this.httpClient.post(`${this.urlTicket}/add`, { quantity, id }).toPromise();
   }
 }

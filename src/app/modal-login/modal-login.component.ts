@@ -1,6 +1,6 @@
 import { faLock, faUser } from '@fortawesome/free-solid-svg-icons';
 
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { FormGroup, FormControl } from '@angular/forms';
 import { Router } from '@angular/router';
 declare var $;
@@ -11,6 +11,8 @@ declare var $;
   styleUrls: ['./modal-login.component.css']
 })
 export class ModalLoginComponent implements OnInit {
+
+  @Input() item;
 
 
 
