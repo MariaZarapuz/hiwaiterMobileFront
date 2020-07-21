@@ -31,13 +31,8 @@ export class ModalLoginComponent implements OnInit {
   }
 
   ngOnInit(): void {
-
+    this.getTickets();
     this.getProduct();
-    console.log(this.table)
-    if (this.table) {
-      this.getTickets();
-    }
-
   }
 
   getProduct() {

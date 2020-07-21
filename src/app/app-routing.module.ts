@@ -5,8 +5,7 @@ import { AppComponent } from './app.component';
 
 
 const routes: Routes = [
-  { path: '', pathMatch: 'full', redirectTo: 'index' },
-  { path: 'home/:id/:token', component: AppComponent },
+  { path: 'home/:id/:token', component: IndexComponent },
 ];
 
 @NgModule({

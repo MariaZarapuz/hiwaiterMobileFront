@@ -23,7 +23,6 @@ export class MenuComponent implements OnInit {
     private menuService: MenuService) { }
 
   ngOnInit(): void {
-    console.log(this.id)
     this.getMenu();
   }
 
@@ -33,8 +32,6 @@ export class MenuComponent implements OnInit {
 
   sendProduct(order) {
     this.orderService.postProduct(order);
-
-
   }
 
   sendOrder() {
