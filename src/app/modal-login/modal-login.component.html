@@ -1,24 +1,39 @@
 <div class="modal-dialog">
   <div class="modal-content">
+    <form [formGroup]="form" class="formLogin" (ngSubmit)="pushOrder()">
+      <div class="modal-body bodyModal" color="black">
 
-    <div class="modal-body bodyModal" color="black">
-      <p>{{item.name}}</p>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+        <h2 class="mb-3">{{item?.name}}</h2>
 
-      <div class="form-group">
+        <img class="col-10" src="{{item?.img}}" alt="">
 
-        <input type="text" class="form-control" formControlName="cif" placeholder="C.I.F">
+        <p class="my-3">{{item?.description}}</p>
+        <div class="row">
+          <div class="select">
+            <label for="">Cantidad</label>
+            <select formControlName="quantity">
+              <option *ngFor="let item of number" value="{{item}}">{{item}}</option>
+            </select>
+          </div>
 
-      </div>
-      <div class="form-group">
-
-        <input type="password" class="form-control" formControlName="password" placeholder="Password">
-
-        <div>
-          <p>C.I.F y/o contraseña inválida</p>
+          <div class="select">
+            <label for="">Ticket</label>
+            <select formControlName="ticket">
+              <option *ngFor="let item of listTicket" value="{{item.id}}">{{item.id}}</option>
+            </select>
+          </div>
         </div>
 
-        <button type="submit" class="btn btn-block btnSubmit">Iniciar</button>
+        <div>
+          <label for="">¿Necesitas quitar algun producto?<br>Escribelo aqui</label>
+          <input formControlName="note" type="textarea">
+        </div>
 
+        <button class="btn btnSubmit" type="submit">Añadir al pedido</button>
       </div>
-
-    </div>
+    </form>
+  </div>
+</div>
