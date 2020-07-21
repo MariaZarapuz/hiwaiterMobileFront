@@ -13,6 +13,7 @@ import { IndexComponent } from './home/index/index.component';
 import { MenuComponent } from './home/menu/menu.component';
 import { NavigationComponent } from './home/index/navigation/navigation.component';
 import { ModalLoginComponent } from './modal-login/modal-login.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -28,6 +29,8 @@ import { ModalLoginComponent } from './modal-login/modal-login.component';
     BrowserModule,
     AppRoutingModule,
     FontAwesomeModule,
+    ReactiveFormsModule,
+
     HttpClientModule
 
   ],

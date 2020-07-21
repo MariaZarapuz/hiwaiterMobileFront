@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { MenuService } from 'src/app/menu.service';
 import { faShoppingCart } from '@fortawesome/free-solid-svg-icons';
+import { OrderService } from 'src/app/order.service';
 
 
 @Component({
@@ -9,22 +10,31 @@ import { faShoppingCart } from '@fortawesome/free-solid-svg-icons';
   styleUrls: ['./menu.component.css']
 })
 export class MenuComponent implements OnInit {
+
+  numberTable = 24;
   listMenu: any;
   faShoppingCart = faShoppingCart;
+  item: any;
+  show: boolean;
 
 
-  constructor(private menuService: MenuService) { }
+  constructor(
+    private orderService: OrderService,
+    private menuService: MenuService) { }
 
   ngOnInit(): void {
     this.getMenu();
+    console.log(this.listMenu)
   }
 
   async getMenu() {
     this.listMenu = await this.menuService.getMenu();
   }
 
-  shopping(order) {
-
+  sendProduct(order) {
+    this.orderService.postProduct(order);
   }
-
+  sendOrder() {
+    this.orderService.sendOrder();
+  }
 }

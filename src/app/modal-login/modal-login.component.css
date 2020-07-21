@@ -1,29 +1,28 @@
-.titleModal {
-  color: rgb(255, 184, 5);
-  background-color: black;
-}
 .bodyModal {
   background-color: rgb(255, 184, 5);
+  text-align: center;
 }
+
+.select {
+  margin: 0 auto;
+}
+
 .close {
   padding: 0px;
   margin: 0px;
   color: black;
 }
-.modal-title {
-  margin: 0 auto;
-}
-.modal-content {
-  background-color:rgb(10, 9, 9);
-}
-.iconUser {
-  text-align: center;
-  color:rgb(10, 9, 9);
-  font-size: 122px;
+
+h2 {
+  color: black;
 }
 
-.formLogin {
-  margin: 20px;
+.modal-content {
+  background-color: rgb(10, 9, 9);
+}
+
+img {
+  width: 100%;
 }
 
 label {
@@ -31,30 +30,13 @@ label {
 }
 
 .btnSubmit {
-  background-color:rgb(10, 9, 9);
+  background-color: rgb(10, 9, 9);
   color: rgb(255, 184, 5);
-  margin-top: 40px;
+  margin-top: 25px;
 }
 
 .btnSubmit:hover {
-  color:rgb(10, 9, 9);
+  color: rgb(10, 9, 9);
   background-color: rgb(255, 184, 5);
   border: 1px solidrgb(10, 9, 9);
 }
-
-.form-control {
-  padding-left: 40px!important;
-}
-.form-group{
-position: relative;
-}
-.form-group fa-icon{
-  position: absolute;
-  left: 7px;
-  top: 6px;
-  color: black;
-  margin-left: 5px;
-
-}
-
-
