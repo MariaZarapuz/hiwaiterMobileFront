@@ -35,6 +35,7 @@ export class OrderService {
   }
 
   postProduct(product) {
+    console.log(product)
     this.item$.next(product)
     this.product = product;
   }

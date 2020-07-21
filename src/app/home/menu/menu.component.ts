@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { MenuService } from 'src/app/menu.service';
 import { faShoppingCart } from '@fortawesome/free-solid-svg-icons';
 import { OrderService } from 'src/app/order.service';
@@ -11,7 +11,7 @@ import { OrderService } from 'src/app/order.service';
 })
 export class MenuComponent implements OnInit {
 
-  numberTable = 25;
+  @Input() id;
   listMenu: any;
   faShoppingCart = faShoppingCart;
   item: any;
@@ -23,6 +23,7 @@ export class MenuComponent implements OnInit {
     private menuService: MenuService) { }
 
   ngOnInit(): void {
+    console.log(this.id)
     this.getMenu();
   }
 
@@ -32,7 +33,10 @@ export class MenuComponent implements OnInit {
 
   sendProduct(order) {
     this.orderService.postProduct(order);
+
+
   }
+
   sendOrder() {
     this.orderService.sendOrder();
   }

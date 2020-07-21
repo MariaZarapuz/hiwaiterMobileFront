@@ -31,8 +31,13 @@ export class ModalLoginComponent implements OnInit {
   }
 
   ngOnInit(): void {
+
     this.getProduct();
-    this.getTickets();
+    console.log(this.table)
+    if (this.table) {
+      this.getTickets();
+    }
+
   }
 
   getProduct() {
@@ -55,7 +60,7 @@ export class ModalLoginComponent implements OnInit {
     };
     this.orderservice.pushOrder(order);
     $('[data-dismiss = modal]').trigger({ type: 'click' });
-    this.form.reset()
+    this.form.reset();
   }
 
 
