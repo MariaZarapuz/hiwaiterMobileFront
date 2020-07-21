@@ -10,6 +10,7 @@ import { TableService } from 'src/app/table.service';
 export class IndexComponent implements OnInit {
   id: any;
   token: any;
+  compare: Object;
 
   constructor(
     private tableService: TableService,
@@ -25,8 +26,9 @@ export class IndexComponent implements OnInit {
       }
     });
   }
-  tokenAndIdCheck(id, token) {
-    this.tableService.tokenAndIdCheck(id, token);
+  async tokenAndIdCheck(id, token) {
+    this.compare = await this.tableService.tokenAndIdCheck(id, token);
+    console.log(this.compare)
   }
 
 }

@@ -12,10 +12,10 @@ import { OrderService } from 'src/app/order.service';
 export class MenuComponent implements OnInit {
 
   @Input() id;
+  @Input() token;
   listMenu: any;
   faShoppingCart = faShoppingCart;
   item: any;
-  show: boolean;
 
 
   constructor(
