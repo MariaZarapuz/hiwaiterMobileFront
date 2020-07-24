@@ -16,14 +16,21 @@ export class MenuComponent implements OnInit {
   listMenu: any;
   faShoppingCart = faShoppingCart;
   item: any;
+  tickets: any;
+
 
 
   constructor(
     private orderService: OrderService,
     private menuService: MenuService) { }
 
-  ngOnInit(): void {
+  async ngOnInit() {
     this.getMenu();
+    await this.orderService.getTicketsObservable().subscribe((res => {
+      this.tickets = res
+      console.log(this.tickets.length)
+    }))
+
   }
 
   async getMenu() {
@@ -34,7 +41,13 @@ export class MenuComponent implements OnInit {
     this.orderService.postProduct(order);
   }
 
+  onSubmit(item) {
+    this.sendProduct(item);
+
+  }
+
   sendOrder() {
     this.orderService.sendOrder();
   }
+
 }

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input, EventEmitter, Output } from '@angular/core';
 import { faShoppingCart } from '@fortawesome/free-solid-svg-icons';
 import { OrderService } from 'src/app/order.service';
 
@@ -10,26 +10,26 @@ import { OrderService } from 'src/app/order.service';
 })
 export class NavigationComponent implements OnInit {
 
+  @Input() token;
+  @Input() id;
+
   faShoppingCart = faShoppingCart;
   quantityTicket: number;
+  tickets: any;
+
 
 
   constructor(private orderService: OrderService) { }
 
-  ngOnInit(): void {
+  ngOnInit() {
+    this.getTickets();
+    this.orderService.getTicketsObservable().subscribe((res => this.tickets = res))
+
   }
 
-  sendQuantityandChangeStatus(id) {
-    this.changeStatus(id);
-    this.quantityTickets(id)
+  async getTickets() {
+    this.tickets = await this.orderService.getTickets(this.id);
+    this.orderService.postTickets(this.tickets);
   }
 
-  changeStatus(id) {
-    this.quantityTicket = parseInt(prompt('¿Cuantas cuentas necesita la mesa?'));
-    this.orderService.changeStatus(id);
-  }
-
-  quantityTickets(id) {
-    this.orderService.quantityTickets(this.quantityTicket, id);
-  }
 }

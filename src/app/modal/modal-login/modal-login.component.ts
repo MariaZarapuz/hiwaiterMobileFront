@@ -1,11 +1,11 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { FormGroup, FormControl } from '@angular/forms';
 import { Router } from '@angular/router';
-import { OrderService } from '../order.service';
+import { OrderService } from 'src/app/order.service';
 declare var $;
 
 @Component({
-  selector: 'app-modal-login',
+  selector: 'app-modal-product',
   templateUrl: './modal-login.component.html',
   styleUrls: ['./modal-login.component.css']
 })
@@ -13,6 +13,7 @@ export class ModalLoginComponent implements OnInit {
 
   @Input() table;
   @Input() token;
+  @Input() tickets;
   item: any;
   number = [1, 2, 3, 4, 5, 6, 7, 8, 9];
   listTicket: any;
@@ -32,16 +33,12 @@ export class ModalLoginComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.getTickets();
     this.getProduct();
+    this.getTicketsObservable()
   }
 
   getProduct() {
     this.orderservice.getProduct().subscribe(arg => this.item = arg);
-  }
-
-  async getTickets() {
-    this.listTicket = await this.orderservice.getTickets(this.table);
   }
 
   pushOrder() {
@@ -59,8 +56,12 @@ export class ModalLoginComponent implements OnInit {
     this.form.reset();
   }
 
+  getTicketsObservable() {
+    this.orderservice.getTicketsObservable().subscribe(arg => {
+      this.tickets = arg;
+    });
+  }
 
 
 }
-
 

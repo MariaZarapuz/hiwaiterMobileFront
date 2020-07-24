@@ -11,8 +11,8 @@
           <p>{{item.description}}</p>
           <div class="row">
             <p class="col-6">Precio: {{item.price}}€</p>
-            <fa-icon [icon]="faShoppingCart" (click)="sendProduct(item)" class="col-6 text-right" data-toggle="modal"
-              data-target="#exampleModal">
+            <fa-icon *ngIf="this.tickets?.length !==0" [icon]="faShoppingCart" (click)="onSubmit(item)"
+              class="col-6 text-right" data-toggle="modal" data-target="#exampleModal">
             </fa-icon>
           </div>
         </div>
@@ -32,8 +32,8 @@
           <p>{{item.description}}</p>
           <div class="row">
             <p class="col-6">Precio: {{item.price}}€</p>
-            <fa-icon [icon]="faShoppingCart" (click)="sendProduct(item)" class="col-6 text-right" data-toggle="modal"
-              data-target="#exampleModal">
+            <fa-icon *ngIf="this.tickets?.length !==0" [icon]="faShoppingCart" (click)="onSubmit(item)"
+              class="col-6 text-right" data-toggle="modal" data-target="#exampleModal">
             </fa-icon>
           </div>
         </div>
@@ -43,7 +43,8 @@
     </div>
   </div>
   <button class="btn" (click)="sendOrder()">Enviar pedido</button>
-  <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+
+  <div class="modal modalTice fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
     aria-hidden="true">
-    <app-modal-login [token]='token' [table]='id'></app-modal-login>
+    <app-modal-product [token]='token' [table]='id'></app-modal-product>
   </div>

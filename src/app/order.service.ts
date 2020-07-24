@@ -16,18 +16,21 @@ export class OrderService {
 
   product: any;
 
-  private item$ = new Subject<any>();
+  private item$ = new Subject<null>();
+  tickets: any;
+  private tickets$ = new Subject<any>();
 
 
   constructor(private httpClient: HttpClient) { }
 
   changeStatus(id) {
-    return this.httpClient.put(`${this.urlTables}/editState`, { id, status: 'Solicitud de pedido' }).toPromise();
+    return this.httpClient.put(`${this.urlTables}/editState`, { id, status: 'ocupada' }).toPromise();
 
   }
 
-  quantityTickets(quantity, id) {
-    return this.httpClient.post(`${this.urlTicket}/add`, { quantity, id }).toPromise();
+  quantityTickets(quantity, id, arrayName) {
+    console.log(id, arrayName, quantity)
+    return this.httpClient.post(`${this.urlTicket}/add`, { quantity, id, arrayName }).toPromise();
   }
 
   getProduct() {
@@ -45,10 +48,17 @@ export class OrderService {
 
   pushOrder(order) {
     this.arrayOrder.push(order);
-    console.log(this.arrayOrder)
   }
 
   sendOrder() {
     this.httpClient.post(`${this.urlOrder}/add`, { order: this.arrayOrder }).toPromise();
+  }
+
+  getTicketsObservable() {
+    return this.tickets$.asObservable();
+  }
+  postTickets(tickets) {
+    this.tickets$.next(tickets)
+    this.tickets = tickets;
   }
 }

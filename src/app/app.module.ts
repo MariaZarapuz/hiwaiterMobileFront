@@ -12,8 +12,9 @@ import { FooterComponent } from './shared/footer/footer.component';
 import { IndexComponent } from './home/index/index.component';
 import { MenuComponent } from './home/menu/menu.component';
 import { NavigationComponent } from './home/index/navigation/navigation.component';
-import { ModalLoginComponent } from './modal-login/modal-login.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { ModalLoginComponent } from './modal/modal-login/modal-login.component';
+import { ModalTicketsComponent } from './modal/modal-tickets/modal-tickets.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { ReactiveFormsModule } from '@angular/forms';
     IndexComponent,
     MenuComponent,
     NavigationComponent,
-    ModalLoginComponent
+    ModalLoginComponent,
+    ModalTicketsComponent
   ],
   imports: [
     BrowserModule,
