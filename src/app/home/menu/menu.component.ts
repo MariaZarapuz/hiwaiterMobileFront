@@ -35,6 +35,7 @@ export class MenuComponent implements OnInit {
 
   async getMenu() {
     this.listMenu = await this.menuService.getMenu();
+    console.log(this.listMenu?.drinks.length !== 0);
   }
 
   sendProduct(order) {

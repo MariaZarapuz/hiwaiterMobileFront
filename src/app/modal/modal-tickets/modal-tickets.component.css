@@ -1,0 +1,12 @@
+.wrapper {
+  padding: 30px 25px;
+  text-align: center;
+}
+
+form div button {
+  margin-top: 20px;
+}
+
+.modal-dialog {
+  margin-top: 180px;
+}

@@ -1,5 +1,5 @@
 <div class="container">
-  <div class="plates">
+  <div *ngIf="listMenu?.plates.length !== 0" class="plates">
     <h2 class="my-3">Platos</h2>
     <div class="plate" *ngFor="let item of listMenu?.plates">
       <h5 class="my-3">{{item.name}}</h5>
@@ -20,7 +20,7 @@
       </div>
     </div>
   </div>
-  <div>
+  <div *ngIf="listMenu?.drinks.length !== 0">
     <h2>Bebidas</h2>
     <div class="drink" *ngFor="let item of listMenu?.drinks">
       <h5 class="my-3">{{item.name}}</h5>

@@ -1,17 +1,17 @@
 <div class="modal-dialog">
   <div class="modal-content">
     <form [formGroup]="form" class="formTicket" (ngSubmit)="howManyTickets()">
-      <div *ngIf="!this.quantityTicket">
-        <h3>¿Cuantas CUENTAS necesitas para la mesa?</h3>
-        <input formControlName='numberTickets' type="number">
-        <button type="submit">contiunuar</button>
+      <div class='wrapper' *ngIf="!this.quantityTicket">
+        <p>¿Cuantas CUENTAS necesitas para la mesa?</p>
+        <input formControlName='numberTickets' type="number"><br>
+        <button class="btn btn-primary" type="submit">Continuar</button>
       </div>
-      <div *ngIf="this.quantityTicket">
+      <div class="wrapper" *ngIf="this.quantityTicket">
         <div *ngFor="let item of quantityTicket;let i=index">
           <label for="">Escribe tu nombre</label>
           <input [formControlName]='"input"+i' type="text">
         </div>
-        <button (click)="sendQuantityandChangeStatus()">Enviar</button>
+        <button class="btn btn-primary" (click)="sendQuantityandChangeStatus()">Enviar</button>
       </div>
     </form>
   </div>
