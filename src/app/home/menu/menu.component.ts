@@ -35,7 +35,11 @@ export class MenuComponent implements OnInit {
 
   async getMenu() {
     this.listMenu = await this.menuService.getMenu();
-    console.log(this.listMenu?.drinks.length !== 0);
+    console.log(this.listMenu.drinks);
+    const listMenu = this.listMenu.drinks.map((res => {
+      console.log(res);
+    }))
+    console.log(this.listMenu);
   }
 
   sendProduct(order) {
